@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 50th Birthday!</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Colorful, animated background */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Massive celebratory header */
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            text-shadow: 3px 6px 12px rgba(0,0,0,0.3);
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        .header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 5.5rem;
+            margin: 0;
+            letter-spacing: 2px;
+            line-height: 1.1;
+        }
+
+        .header p {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-top: 15px;
+            opacity: 0.95;
+        }
+
+        /* Interactive Buttons */
+        .btn-container {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            font-size: 1.2rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: #d81b60;
+            background: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+            color: #e73c7e;
+        }
+
+        /* Hidden elements by default with fade-in animation */
+        #letterContainer, #videoContainer {
+            display: none; 
+            animation: slideUp 0.6s ease forwards;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* The Letter Background */
+        .letter-container {
+            background-color: #fffdf8; 
+            background-image: repeating-linear-gradient(transparent, transparent 31px, #e0d4c3 31px, #e0d4c3 32px); 
+            max-width: 600px;
+            width: 90%;
+            padding: 40px 50px;
+            border-radius: 8px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            position: relative;
+            margin-bottom: 60px;
+            line-height: 32px; 
+        }
+
+        /* Styling the letter text */
+        .letter-content {
+            font-family: 'Lora', serif;
+            font-size: 1.15rem;
+            color: #333;
+            margin-top: -6px; 
+        }
+
+        .greeting {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .sign-off {
+            margin-top: 30px;
+            font-weight: 600;
+            font-style: italic;
+            text-align: right;
+            display: block;
+        }
+
+        /* Decorative stamp/seal */
+        .seal {
+            position: absolute;
+            top: -25px;
+            right: -25px;
+            background: #d81b60;
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            border: 3px dashed white;
+            transform: rotate(15deg);
+        }
+
+        /* Video Container Styling */
+	.video-wrapper {
+		background: white;
+		padding: 15px;
+		border-radius: 12px;
+		box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+		margin-bottom: 60px;
+		width: 90%;
+		max-width: 600px; /* Slightly narrower so it doesn't get too tall on large screens */
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.video-wrapper iframe, .video-wrapper video {
+    		width: 100%;
+   		height: auto; /* Lets the height scale naturally */
+    		aspect-ratio: 4 / 3; /* Forces the perfect 4:3 box */
+    		border-radius: 8px;
+    		border: none;
+    		background-color: black;
+	}
+
+        /* Mobile responsiveness */
+        @media (max-width: 600px) {
+            .header h1 { font-size: 4rem; }
+            .letter-container { padding: 30px 20px; }
+            .seal { width: 50px; height: 50px; font-size: 1.2rem; top: -15px; right: -15px; }
+            .video-wrapper iframe, .video-wrapper video { height: 250px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Happy 50th<br>Birthday Aai!</h1>
+        <p>Celebrating half a century of wonderful you.</p>
+    </div>
+
+    <div class="btn-container">
+        <button class="btn" onclick="revealContent('letterContainer')">💌 Open Your Letter</button>
+        <button class="btn" onclick="revealContent('videoContainer')">🎥 Play Video</button>
+    </div>
+
+    <div id="letterContainer" class="letter-container">
+        <div class="seal">50</div>
+        
+        <div class="letter-content">
+            <span class="greeting">Dearest Aai,</span>
+            
+            Wishing you the happiest of birthdays on this incredible milestone! Half a century is an amazing achievement, and you've spent those years bringing so much light, knowledge, and care to everyone around you.
+	    <br><br>
+	    I'm sure it must feel amazing to step into your 50s. I was fortunate enough to experience 30 out of these 50 amazing years, and I must abmit that this has been the most special and amazing parts of my life. Thank you for not just bringing me into this world but also making me the person that I am today. Right from my childhood, you have been the cornerstone of my life. You have given me endless knowledge and have taught me so many things that nothing feels impossible now. From my childhood to now stepping into my adulthood, you have always been there for me no matter what. It has been a roller coaster so far! Thank you for always correcting me when I'm wrong but also apperiacting me when I was at the top. Sorry  for always troubling you and irritating you but I must admit I do enjoy it a little bit. Thank you for all the maths and science that you have taught me over the years. I hope I could learn from you again one day. I still remeber all those days when you used to take my studies. I still remeber your excitement on the first day of my school. I still remember the day when you dropped me off to college. You and Baba have been with me through everything in my life and I am forever gratefull for your constant support in my life. I have cherished this special bond that I share with you and I will continue to do that for the rest of my life. I'm sure that i will be able to celebrate your 75th birthday in a more special way and by being there with you!!
+            <br><br>
+            Thank you for your endless patience, your guidance, and for being the anchor that holds everything together. I hope today is filled with as much joy and celebration as you deserve. Here is to celebrating you today, and to many more wonderful years ahead! I love you very very very much!!
+	    <br><br>
+            PS: I had done this long before my exams and had to add this line after your call yeasterday. Don't worry my studies are on track!!
+            
+            <span class="sign-off">With all my love,<br>Kshitij</span>
+        </div>
+    </div>
+
+    <div id="videoContainer" class="video-wrapper">
+        <video controls style="width: 100%; border-radius: 8px; background-color: #000;">
+    	<source src="a.mp4" type="video/mp4">
+    	Your browser does not support the video tag.
+	</video>
+    </div>
+
+    <script>
+        function revealContent(elementId) {
+            // Get the element we want to show
+            const content = document.getElementById(elementId);
+            
+            // Toggle visibility
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+                
+                // Smooth scroll down to the revealed content
+                setTimeout(() => {
+                    content.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 100);
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
