@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event Details - VORTEX 13.0</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            background: '#090d16',
+            card: '#111726',
+            primary: '#0ea5e9',
+            accent: '#38bdf8',
+            border: '#1e293b',
+            muted: '#94a3b8'
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-background text-slate-100 min-h-screen flex flex-col font-sans">
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-40 bg-background/80 backdrop-blur-md border-b border-border">
+    <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="events.html" class="flex items-center gap-2 text-xs font-semibold text-muted hover:text-slate-100">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Catalog
+      </a>
+      <a href="index.html" class="font-bold text-sm">VORTEX 13.0</a>
+      <a href="events.html" class="text-xs bg-primary text-black font-semibold px-3 py-1.5 rounded-md">View All Events</a>
+    </nav>
+  </header>
+
+  <!-- DYNAMIC EVENT CONTAINER -->
+  <main id="event-view" class="container mx-auto px-4 py-12 max-w-4xl flex-grow space-y-8">
+    <!-- Populated dynamically via JavaScript -->
+  </main>
+
+  <!-- Load Shared Data -->
+  <script src="events-data.js"></script>
+
+  <script>
+    // 1. Read the ?id= parameter from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const eventId = urlParams.get('id');
+
+    // 2. Find matching event
+    const eventData = festEvents.find(e => e.id === eventId);
+    const container = document.getElementById('event-view');
+
+    if (!eventData) {
+      container.innerHTML = `
+        <div class="text-center py-24 space-y-4">
+          <h1 class="text-2xl font-bold">Event Not Found</h1>
+          <p class="text-muted text-sm">The event you are looking for does not exist or has been retired.</p>
+          <a href="events.html" class="inline-block px-4 py-2 bg-primary text-black text-xs font-semibold rounded-lg">Return to Catalog</a>
+        </div>
+      `;
+    } else {
+      document.title = `${eventData.title} - VORTEX 13.0`;
+
+      container.innerHTML = `
+        <!-- Hero Header -->
+        <div class="space-y-4 border-b border-border pb-8">
+          <span class="text-xs font-semibold px-2.5 py-1 rounded bg-primary/10 text-primary uppercase tracking-wider">${eventData.series} Series</span>
+          <h1 class="text-3xl sm:text-5xl font-black">${eventData.title}</h1>
+          <p class="text-muted text-sm sm:text-base leading-relaxed">${eventData.fullDesc}</p>
+          
+          <div class="flex flex-wrap gap-6 pt-2 text-sm">
+            <div><span class="text-muted block text-xs">Registration Fee</span><span class="font-bold text-slate-100">₹${eventData.fee}</span></div>
+            <div><span class="text-muted block text-xs">Prize Pool</span><span class="font-bold text-emerald-400">${eventData.prizePool}</span></div>
+            <div><span class="text-muted block text-xs">Team Constraints</span><span class="font-bold text-slate-100">${eventData.teamSize}</span></div>
+          </div>
+          
+          <div class="pt-4">
+            <button onclick="registerDirectly('${eventData.id}')" class="px-6 py-2.5 rounded-lg bg-primary hover:bg-accent text-black font-bold text-xs uppercase tracking-wide transition flex items-center gap-2">
+              <i data-lucide="shopping-bag" class="w-4 h-4"></i> Add to Fest Pass
+            </button>
+          </div>
+        </div>
+
+        <!-- Competition Rounds -->
+        <div class="space-y-4">
+          <h2 class="text-xl font-bold">Rounds & Timeline</h2>
+          <div class="space-y-3">
+            ${eventData.rounds.map(r => `
+              <div class="p-4 rounded-xl border border-border bg-card space-y-1">
+                <span class="text-xs font-bold text-primary">${r.num}</span>
+                <h3 class="font-bold text-sm text-slate-200">${r.title}</h3>
+                <p class="text-xs text-muted leading-relaxed">${r.desc}</p>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <!-- Rules & Guidelines -->
+        <div class="space-y-3">
+          <h2 class="text-xl font-bold">Rules & Guidelines</h2>
+          <ul class="p-5 rounded-xl border border-border bg-card space-y-2 text-xs text-slate-300 list-disc list-inside">
+            ${eventData.rules.map(rule => `<li>${rule}</li>`).join('')}
+          </ul>
+        </div>
+
+        <!-- Event Leads / Heads -->
+        <div class="space-y-3">
+          <h2 class="text-xl font-bold">Event Coordinators</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+            ${eventData.heads.map(h => `
+              <div class="p-4 rounded-xl border border-border bg-card flex justify-between items-center text-xs">
+                <div>
+                  <h4 class="font-bold text-slate-200">${h.name}</h4>
+                  <span class="text-muted">Event Head</span>
+                </div>
+                <a href="tel:${h.phone}" class="text-primary hover:underline font-mono">${h.phone}</a>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+      lucide.createIcons();
+    }
+
+    function registerDirectly(id) {
+      let cart = JSON.parse(localStorage.getItem('vortex_cart') || '[]');
+      if (cart.find(i => i.id === id)) {
+        alert('Event is already in your pass/cart!');
+      } else {
+        cart.push(eventData);
+        localStorage.setItem('vortex_cart', JSON.stringify(cart));
+        window.location.href = 'events.html';
+      }
+    }
+  </script>
+</body>
+</html>
