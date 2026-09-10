@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VORTEX 13.0 - ICT Mumbai's Premier Chemical Engineering Fest</title>
+  <meta name="description" content="Register for VORTEX 13.0, ICT Mumbai's premier chemical engineering fest. Choose from Prodigy, General, and Pharma series events. Join the reaction!" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            background: '#090d16',
+            card: '#111726',
+            primary: '#0ea5e9',
+            accent: '#38bdf8',
+            border: '#1e293b',
+            muted: '#94a3b8'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Smooth background glow effect */
+    .glow-bg {
+      background: radial-gradient(circle at 50% 20%, rgba(14, 165, 233, 0.15), transparent 70%);
+    }
+  </style>
+</head>
+
+<body class="bg-background text-slate-100 min-h-screen flex flex-col font-sans selection:bg-primary selection:text-black">
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="h-10 w-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center font-bold text-black text-xl shadow-lg shadow-primary/20">
+          V
+        </div>
+        <div>
+          <span class="font-bold tracking-wider text-lg block leading-none">VORTEX 13.0</span>
+          <span class="text-[10px] text-muted uppercase tracking-widest">ICT Mumbai</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
+        <a href="index.html" class="text-primary font-semibold">Home</a>
+        <a href="events.html" class="hover:text-slate-100 transition-colors">Events</a>
+        <a href="faq.html" class="hover:text-slate-100 transition-colors">FAQ</a>
+        <a href="about.html" class="hover:text-slate-100 transition-colors">About</a>
+      </div>
+
+      <!-- Action & Dark Mode Toggle -->
+      <div class="flex items-center gap-3">
+        <button id="theme-toggle" class="p-2 rounded-full border border-border bg-card hover:bg-slate-800 text-primary transition" title="Toggle Theme">
+          <i data-lucide="moon" class="w-4 h-4"></i>
+        </button>
+        <a href="events.html" class="bg-primary hover:bg-accent text-black font-semibold px-4 py-2 rounded-lg text-sm transition-all shadow-md shadow-primary/20">
+          Register Now
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ================= MAIN BODY ================= -->
+  <main class="flex-grow glow-bg">
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-4 pt-16 pb-20 text-center space-y-6">
+      <!-- Chemical Tag Elements -->
+      <div class="flex justify-center gap-2 text-xs font-mono text-primary/80 mb-2">
+        <span class="px-2.5 py-1 rounded-full border border-primary/20 bg-primary/5">H₂O</span>
+        <span class="px-2.5 py-1 rounded-full border border-primary/20 bg-primary/5">C₆H₁₂O₆</span>
+        <span class="px-2.5 py-1 rounded-full border border-primary/20 bg-primary/5">CO₂</span>
+      </div>
+
+      <div class="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary">
+        <span>🌊 Theme: Aquessence 🐋</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight">
+        VORTEX <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">13.0</span>
+      </h1>
+
+      <p class="text-lg md:text-xl text-muted max-w-2xl mx-auto font-normal">
+        ICT Mumbai's Premier Chemical Engineering Fest. Where cutting-edge chemical engineering, pharma innovation, and student energy converge.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
+        <a href="events.html" class="px-6 py-3 rounded-lg bg-primary hover:bg-accent text-black font-semibold text-sm transition flex items-center gap-2 shadow-lg shadow-primary/20">
+          Explore Events <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+        <a href="#about-overview" class="px-6 py-3 rounded-lg border border-border bg-card hover:bg-slate-800 text-slate-200 font-semibold text-sm transition">
+          Learn More
+        </a>
+      </div>
+
+      <!-- Feature Pill Badges -->
+      <div class="flex flex-wrap justify-center gap-6 pt-10 text-xs text-muted">
+        <span class="inline-flex items-center gap-2">
+          <i data-lucide="sparkles" class="w-4 h-4 text-primary"></i> Innovation-led agenda
+        </span>
+        <span class="inline-flex items-center gap-2">
+          <i data-lucide="users" class="w-4 h-4 text-accent"></i> Student-first experience
+        </span>
+        <span class="inline-flex items-center gap-2">
+          <i data-lucide="calendar-check" class="w-4 h-4 text-emerald-400"></i> Year-round programming
+        </span>
+      </div>
+    </section>
+
+    <!-- ================= FEATURED EVENT TRACKS ================= -->
+    <section class="container mx-auto px-4 py-12">
+      <div class="text-center space-y-2 mb-10">
+        <h2 class="text-3xl font-bold">Event Categories</h2>
+        <p class="text-muted text-sm">Choose from three dedicated series tailored for engineers and researchers.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Prodigy -->
+        <div class="rounded-xl border border-border bg-card p-6 flex flex-col justify-between hover:border-primary/40 transition">
+          <div>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded bg-blue-500/10 text-blue-400">Flagship</span>
+            <h3 class="text-xl font-bold mt-4">Prodigy Series</h3>
+            <p class="text-muted text-sm mt-2">
+              Advanced chemical engineering problem-solving labs, simulation challenges, and pilot plant models.
+            </p>
+          </div>
+          <a href="events.html?track=prodigy" class="mt-6 text-sm font-medium text-primary hover:text-accent flex items-center gap-1">
+            Browse Prodigy Events <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <!-- General -->
+        <div class="rounded-xl border border-border bg-card p-6 flex flex-col justify-between hover:border-primary/40 transition">
+          <div>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded bg-amber-500/10 text-amber-400">Open For All</span>
+            <h3 class="text-xl font-bold mt-4">General Series</h3>
+            <p class="text-muted text-sm mt-2">
+              Quizzes, case studies, analytical chemistry brainteasers, and competitive business-tech pitches.
+            </p>
+          </div>
+          <a href="events.html?track=general" class="mt-6 text-sm font-medium text-primary hover:text-accent flex items-center gap-1">
+            Browse General Events <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <!-- Pharma -->
+        <div class="rounded-xl border border-border bg-card p-6 flex flex-col justify-between hover:border-primary/40 transition">
+          <div>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400">Life Sciences</span>
+            <h3 class="text-xl font-bold mt-4">Pharma Series</h3>
+            <p class="text-muted text-sm mt-2">
+              Bioprocess development, drug discovery cases, formulation science, and regulatory compliance panels.
+            </p>
+          </div>
+          <a href="events.html?track=pharma" class="mt-6 text-sm font-medium text-primary hover:text-accent flex items-center gap-1">
+            Browse Pharma Events <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT & INSTITUTE ================= -->
+    <section id="about-overview" class="container mx-auto px-4 py-12">
+      <div class="grid lg:grid-cols-2 gap-8">
+        
+        <div class="rounded-xl border border-border bg-card p-8 space-y-4">
+          <h3 class="text-2xl font-bold">The Event</h3>
+          <p class="text-muted text-sm leading-relaxed">
+            Vortex is a curated series of competitions, labs, and talks blending chemical engineering fundamentals with real-world industry practice. Every track delivers hands-on challenges, live demonstrations, and direct technical mentorship.
+          </p>
+          <ul class="space-y-2 text-sm text-slate-300">
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-primary mt-0.5 shrink-0"></i>
+              Live problem-solving labs and guided walkthroughs.
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-primary mt-0.5 shrink-0"></i>
+              Industry panels on process design, safety, and bioprocessing.
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-primary mt-0.5 shrink-0"></i>
+              Career-aligned workshops with certificates and feedback.
+            </li>
+          </ul>
+        </div>
+
+        <div class="rounded-xl border border-border bg-card p-8 space-y-4">
+          <h3 class="text-2xl font-bold flex items-center gap-2">
+            <i data-lucide="building-2" class="w-5 h-5 text-primary"></i> ICT Mumbai
+          </h3>
+          <p class="text-muted text-sm leading-relaxed">
+            Established in 1933 as UDCT and granted Deemed-to-be University status in 2008, the Institute of Chemical Technology is recognized globally for excellence in chemical engineering, materials sciences, and allied disciplines.
+          </p>
+          <div class="flex items-start gap-2 text-xs text-muted pt-2">
+            <i data-lucide="map-pin" class="w-4 h-4 text-primary shrink-0 mt-0.5"></i>
+            <span>Nathalal Parekh Marg, Matunga, Mumbai - 400019, India</span>
+          </div>
+          <a href="https://www.ictmumbai.edu.in/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-semibold text-primary hover:underline pt-2">
+            Visit Institute Website <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= LEADERSHIP / CORE TEAM ================= -->
+    <section class="container mx-auto px-4 py-12 space-y-8">
+      <div>
+        <h2 class="text-3xl font-bold">Fest Leadership</h2>
+        <p class="text-muted text-sm">Faculty convenor and primary student secretaries for Vortex 13.0.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Convenor -->
+        <div class="rounded-xl border border-border bg-card overflow-hidden">
+          <div class="h-48 bg-slate-800 flex items-center justify-center text-muted">
+            <i data-lucide="user-check" class="w-16 h-16 text-slate-600"></i>
+          </div>
+          <div class="p-5 space-y-2">
+            <span class="text-xs font-semibold text-primary">Faculty Convenor</span>
+            <h3 class="text-lg font-bold">Prof. Mandar P Badve</h3>
+            <p class="text-xs text-muted leading-relaxed">
+              Assistant Professor, Department of Chemical Engineering, ICT Mumbai.
+            </p>
+          </div>
+        </div>
+
+        <!-- Secretary 1 -->
+        <div class="rounded-xl border border-border bg-card overflow-hidden">
+          <div class="h-48 bg-slate-800 flex items-center justify-center text-muted">
+            <i data-lucide="user" class="w-16 h-16 text-slate-600"></i>
+          </div>
+          <div class="p-5 space-y-2">
+            <span class="text-xs font-semibold text-primary">Secretary</span>
+            <h3 class="text-lg font-bold">Soham Raut</h3>
+            <p class="text-xs text-muted">
+              Overseeing general administration, cross-team operations, and institutional sponsorships.
+            </p>
+            <a href="tel:+919834249270" class="inline-flex items-center gap-1.5 text-xs text-primary pt-2 hover:underline">
+              <i data-lucide="phone" class="w-3.5 h-3.5"></i> +91 98342 49270
+            </a>
+          </div>
+        </div>
+
+        <!-- Secretary 2 -->
+        <div class="rounded-xl border border-border bg-card overflow-hidden">
+          <div class="h-48 bg-slate-800 flex items-center justify-center text-muted">
+            <i data-lucide="user" class="w-16 h-16 text-slate-600"></i>
+          </div>
+          <div class="p-5 space-y-2">
+            <span class="text-xs font-semibold text-primary">Secretary</span>
+            <h3 class="text-lg font-bold">Dimple Rane</h3>
+            <p class="text-xs text-muted">
+              Leading outreach initiatives, participant hospitality, and digital campaign execution.
+            </p>
+            <a href="tel:+919372122722" class="inline-flex items-center gap-1.5 text-xs text-primary pt-2 hover:underline">
+              <i data-lucide="phone" class="w-3.5 h-3.5"></i> +91 93721 22722
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="border-t border-border bg-card mt-12">
+    <div class="container mx-auto px-4 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <div class="space-y-3">
+          <h4 class="text-lg font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">VORTEX 13.0</h4>
+          <p class="text-xs text-muted">ICT Mumbai's Premier Chemical Engineering Fest</p>
+          <p class="text-xs text-muted flex items-center gap-1">
+            <span>🌊 Theme: Aquessence 🐋</span>
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <h5 class="text-sm font-semibold text-slate-200">Quick Links</h5>
+          <ul class="space-y-2 text-xs text-muted">
+            <li><a href="index.html" class="hover:text-primary transition">Home</a></li>
+            <li><a href="events.html" class="hover:text-primary transition">Events Catalog</a></li>
+            <li><a href="faq.html" class="hover:text-primary transition">Frequently Asked Questions</a></li>
+            <li><a href="about.html" class="hover:text-primary transition">Core Committee</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-3">
+          <h5 class="text-sm font-semibold text-slate-200">Contact</h5>
+          <div class="space-y-2 text-xs text-muted">
+            <a href="mailto:vortexsecretary.ta@ug.ictmumbai.edu.in" class="flex items-center gap-2 hover:text-primary transition">
+              <i data-lucide="mail" class="w-3.5 h-3.5"></i> vortexsecretary.ta@ug.ictmumbai.edu.in
+            </a>
+            <div class="flex items-start gap-2 pt-1">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 shrink-0 mt-0.5 text-primary"></i>
+              <span>ICT Mumbai, Matunga, Mumbai - 400019</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <h5 class="text-sm font-semibold text-slate-200">Connect</h5>
+          <div class="flex gap-4 text-muted">
+            <a href="https://www.instagram.com/vortex_ict/" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition" title="Instagram">
+              <i data-lucide="instagram" class="w-5 h-5"></i>
+            </a>
+            <a href="http://wa.me/+919834249270" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition" title="WhatsApp Support">
+              <i data-lucide="message-circle" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-border/60 text-center text-xs text-muted">
+        <p>© 2026 Vortex, ICT Mumbai. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lucide Icon Renderer & Theme Handler -->
+  <script>
+    lucide.createIcons();
+
+    // Simple Light/Dark Theme Switcher
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    themeToggleBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+    });
+  </script>
+</body>
+</html>
